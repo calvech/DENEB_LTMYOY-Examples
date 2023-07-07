@@ -1,0 +1,11 @@
+fold using date as x axis
+{
+  "data": {"name": "dataset"},
+  "transform": [{"fold": ["Rolling LTM Cash", "Rolling LTM Prior Year","Rolling LTM Second Prior Year"]}],
+  "mark": "bar",
+  "encoding": {
+    "x": { "timeUnit": "yearmonthdate", "field": "Date", "type": "ordinal"},
+    "y": {"field": "value", "type": "quantitative"},
+    "xOffset": {"field": "key"}
+  }
+}
