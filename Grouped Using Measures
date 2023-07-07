@@ -1,0 +1,27 @@
+Grouped using measures
+{
+  "data": {"name": "dataset"},
+  "repeat":{
+    "layer": [ "Second Prior Year Cash", "Prior Year Cash", "Month-End Cash"]},
+  "spec":{
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "timeUnit": "yearmonth",
+        "field": "Date",
+        "type": "ordinal",
+        "axis":{ "title": "Date", "titleFont": "arial", "titleFontSize": 12, "labelFontSize": 9, "labelAngle": 90}
+      },
+      "y":{
+      "aggregate": "sum",
+      "field": {"repeat": "layer"},
+      "type": "quantitative",
+      "axis": {
+        "title": "Month End Cash", "titleFont": "arial", "titleFontSize": 14, "labelFontSize": 14, "labelAngle": 270
+      }
+      },
+      "color": {"datum": {"repeat": "layer"}, "title": "measure" },
+      "xOffset": {"datum": {"repeat": "layer"}} 
+    }
+  }
+}
