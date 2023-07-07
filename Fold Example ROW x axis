@@ -1,0 +1,21 @@
+"ROW" as x Axis
+{
+  "data": {"name": "dataset"},
+  "transform": [
+    {"fold": ["Rolling LTM Cash", "Rolling LTM Prior Year","Rolling LTM Second Prior Year"]}],
+  "mark": "bar",
+  "encoding": {
+    "x": { 
+    "field": "__row__",
+    "type": "nominal",
+    "scale": {
+      "domain": [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58]
+    }
+    },
+    "y": {
+      "field": "value", 
+      "type": "quantitative"},
+    "xOffset": {"field": "key", "sort": ["Rolling LTM Second Prior Year", "Rolling LTM Prior Year", "Rolling LTM Cash"]},
+    "color": {"field": "key", "type": "nominal"}
+  }
+}
