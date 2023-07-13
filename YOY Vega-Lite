@@ -1,0 +1,30 @@
+{
+  "title": {
+    "text": "Month-End Cash & Cash Equivalents",
+    "fontSize": 22
+    },
+  "data": {"name": "dataset"},
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "x":{
+      "timeUnit": "yearmonthdate",
+      "field": "Date",
+      "type": "ordinal",
+      "title":"month", 
+      "axis": {},
+      "scale": {
+      }
+    },
+    "y":{"field": "Sum of Amount", "type": "quantitative"},
+    "xOffset": {
+      "field": "Header",
+      "sort": "descending"
+    },
+    "color": {
+      "field": "Header",
+      "legend": {"orient": "bottom", "title": "", "titleFontSize":1}
+    }
+  }
+}
