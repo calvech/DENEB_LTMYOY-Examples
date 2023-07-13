@@ -1,0 +1,37 @@
+Table = 
+VAR MonthEnd = 
+FILTER(
+ADDCOLUMNS(
+    VALUES('LTM Cash Table'[Date]),
+    "Header", "Month-End Cash",
+    "Amount",'LTM Cash Table'[Cash YTD]
+),
+'LTM Cash Table'[Date]>DATE(2022,05,31)
+)
+
+VAR MonthEndYOY =
+FILTER(
+ADDCOLUMNS(
+    DATEADD(VALUES('LTM Cash Table'[Date]),1,YEAR),
+    "Header", "Prior Year Cash",
+    "Amount", 'LTM Cash Table'[Cash Prior YTD]
+),
+'LTM Cash Table'[Date]>DATE(2022,05,31)
+)
+
+VAR MonthEndYOY2 = 
+FILTER(
+ADDCOLUMNS(
+    DATEADD(VALUES('LTM Cash Table'[Date]),2,YEAR),
+    "Header", "Second Prior Year Cash",
+    "Amount", 'LTM Cash Table'[Rolling LTM Second Prior Year]
+),
+'LTM Cash Table'[Date]>DATE(2022,05,31)
+)
+
+VAR MonthEndUnion = 
+
+UNION (MonthEnd, MonthEndYOY, MonthEndYOY2)
+
+
+RETURN MonthEndUnion
