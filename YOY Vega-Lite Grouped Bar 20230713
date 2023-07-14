@@ -1,0 +1,67 @@
+{
+  
+  "title": {
+    "text": "Month-End Cash & Cash Equivalents",
+    "fontSize": 22,
+    "subtitle": "Including/Excluding Lost Revenue",
+    "subtitleFontSize": 12
+    },
+  "data": {"name": "dataset"},
+  "config": {
+    "axis": {}
+  },
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "x":{
+      "timeUnit": "yearmonth",
+      "field": "Date",
+      "type": "ordinal",
+      "title":"", 
+      "axis": {
+        "labelFontSize": 8,
+        "labelColor": "black",
+        "domainColor": "black",
+        "labelFontWeight": "bold",
+        "labelAngle": 0
+      },
+      "scale": {
+      }
+    },
+    "y":{
+      "field": "Sum of Amount", 
+      "type": "quantitative",
+      "title": "",
+      "axis": {
+        "labelFontSize": 14,
+        "labelColor": "black",
+        "titleFontSize": 16,
+        "format": "$.2s",
+        "gridColor": "black",
+        "tickCount": 5,
+        "domain": false
+      }
+    },
+    "xOffset": {
+      "field": "Header",
+      "sort": "descending"
+    },
+    "color": {
+      "field": "Header",
+      "scale":{
+        "domain": ["Month-End Cash", "Prior Year Cash", "Second Prior Year Cash"],
+        "range": ["#3c8a2e", "#5bb149", "#7bd965"]
+      },
+      "legend": {
+        "orient": "bottom", 
+        "title": "", 
+        "labelColor": "black",
+        "labelFontSize": 10,
+        "symbolType": "square",
+        "padding": 0
+        
+      }
+    }
+  }
+}
